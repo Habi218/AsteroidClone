@@ -1,0 +1,21 @@
+[gd_scene load_steps=6 format=3 uid="uid://bwo5bedxbmww8"]
+
+[ext_resource type="PackedScene" uid="uid://b1wi2t50n8ol5" path="res://scenes/game/background.tscn" id="1_6barr"]
+[ext_resource type="Script" path="res://scenes/game/game.gd" id="1_t04ul"]
+[ext_resource type="PackedScene" uid="uid://ds1f6noyju84d" path="res://scenes/game/player.tscn" id="3_wfl0v"]
+[ext_resource type="Script" path="res://scenes/game/background.gd" id="3_xpto3"]
+[ext_resource type="PackedScene" uid="uid://csj3w1nrbqrg8" path="res://scenes/game/asteroid_spawner.tscn" id="4_1d6k2"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_t04ul")
+
+[node name="Background" parent="." instance=ExtResource("1_6barr")]
+script = ExtResource("3_xpto3")
+
+[node name="PlayerController" parent="." instance=ExtResource("3_wfl0v")]
+
+[node name="Asteroid Spawner" parent="." instance=ExtResource("4_1d6k2")]
+
+[node name="Bullets" type="Node2D" parent="." groups=["bullet"]]
+
+[connection signal="player_position" from="PlayerController" to="Background" method="_on_player_controller_player_position"]

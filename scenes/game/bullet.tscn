@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcvgbgxmeo714"]
+
+[ext_resource type="Script" path="res://scenes/game/bullet.gd" id="1_c6mgt"]
+[ext_resource type="Texture2D" uid="uid://821giy3l67lg" path="res://assets/sprites/AsteroidBullet.png" id="1_pymuo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_24n5f"]
+size = Vector2(8, 16)
+
+[node name="Bullet" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_c6mgt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -45)
+texture = ExtResource("1_pymuo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -45)
+shape = SubResource("RectangleShape2D_24n5f")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(5, -45)
+rect = Rect2(-10, -10, 10, 20)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

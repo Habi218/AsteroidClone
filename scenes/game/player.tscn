@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://ds1f6noyju84d"]
+
+[ext_resource type="Script" path="res://scenes/game/PlayerController.gd" id="1_do8op"]
+[ext_resource type="Texture2D" uid="uid://bsmgxhy3if7h1" path="res://assets/sprites/AsteroidPlayer.png" id="2_163b1"]
+[ext_resource type="Script" path="res://scenes/game/Camera.gd" id="3_v3dnb"]
+
+[node name="PlayerController" type="CharacterBody2D"]
+rotation = -1.5708
+collision_mask = 2
+script = ExtResource("1_do8op")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("2_163b1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+rotation = 1.5708
+polygon = PackedVector2Array(5, -30.5, 32, 21.6, 32, 32, 22.9, 32, -1.1, 18.8, -22.2, 32, -32, 32, -32, 21.6, -5, -30.5, -5, -32, 5, -32)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_smoothed = true
+script = ExtResource("3_v3dnb")

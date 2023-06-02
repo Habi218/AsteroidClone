@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://cm5ghu4w6jm4o"]
+
+[ext_resource type="Script" path="res://scenes/game/Asteroid.gd" id="1_qm8fv"]
+[ext_resource type="Texture2D" uid="uid://cb6xo8acrvepi" path="res://assets/sprites/AsteroidAsteroid.png" id="2_hhexx"]
+
+[node name="Asteroid Large" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 6
+script = ExtResource("1_qm8fv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_hhexx")
+
+[node name="SpriteX" type="Sprite2D" parent="."]
+texture = ExtResource("2_hhexx")
+
+[node name="SpriteY" type="Sprite2D" parent="."]
+texture = ExtResource("2_hhexx")
+
+[node name="SpriteXY" type="Sprite2D" parent="."]
+texture = ExtResource("2_hhexx")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-13.3, -49, 33, -49, 33, -46.6, 54, -14.6, 54, 2.2, 47.3, 13.1, 52, 15.9, 52, 23, 50.4, 23, 39.3, 50, 2.9, 50, -0.400002, 54, -11.4, 54, -54, 31.3, -54, -2, -50.4, -21.5, -54, -24.4, -54, -34, -30, -53.9, -19, -54)
+
+[node name="Timer" type="Timer" parent="."]

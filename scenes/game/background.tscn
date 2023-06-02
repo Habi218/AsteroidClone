@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1wi2t50n8ol5"]
+
+[ext_resource type="Texture2D" uid="uid://qwhj3sorrhv1" path="res://assets/sprites/SpaceBackGround.jpg" id="1_3jp5p"]
+
+[node name="Background" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+follow_viewport_enabled = true
+
+[node name="SpaceBackGround" type="Sprite2D" parent="ParallaxBackground"]
+texture = ExtResource("1_3jp5p")
+
+[node name="SpaceBackGround2" type="Sprite2D" parent="ParallaxBackground"]
+visible = false
+texture = ExtResource("1_3jp5p")
+
+[node name="SpaceBackGround3" type="Sprite2D" parent="ParallaxBackground"]
+visible = false
+texture = ExtResource("1_3jp5p")
+
+[node name="SpaceBackGround4" type="Sprite2D" parent="ParallaxBackground"]
+visible = false
+texture = ExtResource("1_3jp5p")
